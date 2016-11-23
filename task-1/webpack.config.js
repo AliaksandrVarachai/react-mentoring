@@ -18,6 +18,11 @@ module.exports = {
     module: {
         loaders: [
             {
+                test: /\.css$/,
+                include: SRC_DIR,
+                loader: 'style-loader'
+            },
+            {
                 test: /\.jsx?$/,
                 include: SRC_DIR,
                 loader: 'babel-loader',
@@ -26,6 +31,8 @@ module.exports = {
                 }
             }
         ]
-    }
-
+    },
+    plugins: []
+    // problem of loading of css to react components
+    // http://stackoverflow.com/questions/30347722/importing-css-files-in-isomorphic-react-components
 };
