@@ -7,22 +7,28 @@ var DIST_DIR = path.resolve(ASSETS_DIR, 'dist');
 
 module.exports = {
     entry: {
-        main: path.resolve(SRC_DIR, 'views/main'),
-        home: path.resolve(SRC_DIR, 'views/home')
+        main: path.resolve(SRC_DIR, 'views/main')
     },
     output: {
         path: DIST_DIR,
         filename: '[name].js',
         publicPath: '/'
     },
+    watch: true,  //TODO: make prod version
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ],
     module: {
         loaders: [
             {
+                test: /(\.jsx?$)|(\.css)/,
+                loader: 'react-hot',
+                exclude: /node_modules/
+            }, {
                 test: /\.css$/,
                 include: SRC_DIR,
-                loader: 'style-loader'
-            },
-            {
+                loader: 'style-loader!css-loader'
+            }, {
                 test: /\.jsx?$/,
                 include: SRC_DIR,
                 loader: 'babel-loader',
@@ -31,8 +37,5 @@ module.exports = {
                 }
             }
         ]
-    },
-    plugins: []
-    // problem of loading of css to react components
-    // http://stackoverflow.com/questions/30347722/importing-css-files-in-isomorphic-react-components
+    }
 };

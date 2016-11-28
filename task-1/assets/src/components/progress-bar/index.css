@@ -1,0 +1,12 @@
+.progress-bar {
+    box-sizing: border-box;
+    border: solid grey 1px;
+    width: 100%;
+    height: 10px;
+}
+
+.progress-bar .percent-completed {
+    height: 100%;
+    width: 60%;
+    background: slategray;
+}
