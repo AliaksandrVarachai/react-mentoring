@@ -1,0 +1,29 @@
+.search {
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.search .show-active-container {
+    padding-right: 10px;
+}
+
+.search .search-string-container {
+    border: solid slategray 1px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.search .search-string {
+    width: 150px;
+    outline: none;
+    border-width: 0;
+    padding: 0 5px;
+}
+
+.search .erase {
+    width: 20px;
+    text-align: center;
+    background: darkgrey;
+    display: inline-block;
+    border-radius: 0 3px 3px 0;
+}

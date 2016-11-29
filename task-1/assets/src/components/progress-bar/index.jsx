@@ -1,14 +1,19 @@
 import "./index.css";
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-export class ProgressBar extends React.Component {
+class ProgressBar extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            "percentCompleted": 60
+        }
+    }
+
     render() {
-        return <div className="progressBar">
-            <div className="percentCompleted"></div>
+        return <div className="progress-bar">
+            <div className="percent-completed" style={{width: this.state.percentCompleted+'%'}}></div>
         </div>
     }
 }
 
-//TODO: change to className
-ReactDOM.render(<ProgressBar/>, document.getElementById("progressBar"));
+export default ProgressBar;

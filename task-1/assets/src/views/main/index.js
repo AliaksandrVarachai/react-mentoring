@@ -1,4 +1,5 @@
 import ProgressBar from '../../components/progress-bar/index.jsx';
+import Search from '../../components/search/index.jsx';
 
 import './index.css';
 import React from 'react';
@@ -6,14 +7,14 @@ import ReactDOM from 'react-dom';
 
 export class Header extends React.Component {
     render() {
-        return <div className="header">
-            <div className="pageName">to-do list</div>
-            <div className="search">Search component here</div>
-            <div className="progressBar"></div>
+        return <div>
+            <div className="v-row">
+                <Search/>
+                <div className="v-page-name">to-do list</div>
+            </div>
+            <ProgressBar/>
         </div>
     }
 }
 
-//TODO: change to className
-ReactDOM.render(<Header/>, document.getElementById("header"));
-//ReactDOM.render(<ProgressBar/>, document.getElementById("progressBar"));
+ReactDOM.render(<Header/>, document.getElementById("p-header"));

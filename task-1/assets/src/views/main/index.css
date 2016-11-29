@@ -1,6 +1,27 @@
-.page-header {
+body {
+    font: 16px sans-serif;
+}
+
+.p-wrapper {
+    max-width: 1000px;
+    min-width: 600px;
+    margin: 0 auto;
+}
+
+#p-header .v-page-name {
     color: blue;
     font-size: 18px;
     font-weight: bold;
     text-transform: capitalize;
+    padding-top: 10px;
+}
+
+#p-header .search {
+    float: right;
+    max-width: 50%;
+}
+
+#p-header .v-row {
+    clear: both;
+    overflow: hidden;
 }
