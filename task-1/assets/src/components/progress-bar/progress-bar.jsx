@@ -1,6 +1,6 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
-import styles from './index.css';
+import styles from './progress-bar.css';
 
 class ProgressBar extends React.Component {
     constructor() {
@@ -17,5 +17,4 @@ class ProgressBar extends React.Component {
     }
 }
 
-//export default ProgressBar;
 export default CSSModules(ProgressBar, styles);

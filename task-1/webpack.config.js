@@ -28,10 +28,12 @@ module.exports = {
                 exclude: /node_modules/
             }, {
                 test: /\.css$/,
-                include: SRC_DIR,
-                //loader: 'style-loader!css-loader'
-                //loader: ExtractTextPlugin.extract('css')
-                loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
+                include: path.resolve(SRC_DIR, 'components'),
+                loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]--[hash:base64:5]')
+            }, {
+                test: /\.css$/,
+                include: path.resolve(SRC_DIR, 'views'),
+                loader: 'style-loader!css-loader'
             }, {
                 test: /\.jsx?$/,
                 include: SRC_DIR,
