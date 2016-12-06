@@ -1,5 +1,6 @@
-import "./index.css";
 import React from 'react';
+import CSSModules from 'react-css-modules';
+import styles from './index.css';
 
 class ProgressBar extends React.Component {
     constructor() {
@@ -10,10 +11,11 @@ class ProgressBar extends React.Component {
     }
 
     render() {
-        return <div className="progress-bar">
-            <div className="percent-completed" style={{width: this.state.percentCompleted+'%'}}></div>
+        return <div styleName='progress-bar'>
+            <div styleName='percent-completed'></div>
         </div>
     }
 }
 
-export default ProgressBar;
+//export default ProgressBar;
+export default CSSModules(ProgressBar, styles);

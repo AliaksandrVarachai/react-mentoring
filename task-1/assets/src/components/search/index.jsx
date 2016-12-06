@@ -1,5 +1,7 @@
-import './index.css';
 import React from 'react';
+import CSSModules from 'react-css-modules';
+import styles from './index.css';
+
 
 class Search extends React.Component {
     constructor() {
@@ -11,18 +13,19 @@ class Search extends React.Component {
     }
 
     render() {
-        return <div className="search">
-            <label className="show-active-container">
-                <input type="checkbox" className="show-active"/>
+        return <div styleName='search'>
+            <label styleName='show-active-container'>
+                <input styleName='show-active' type='checkbox'/>
                 Show active
             </label>
-            <div className="search-string-container">
-                <input type="text" placeholder="Search" className="search-string"/>
-                <div className="erase">x</div>
+            <div styleName='search-string-container'>
+                <input type="text" placeholder="Search" styleName='search-string'/>
+                <div styleName='erase'>x</div>
             </div>
         </div>
     }
 
 }
 
-export default Search;
+//export default Search;
+export default CSSModules(Search, styles);
