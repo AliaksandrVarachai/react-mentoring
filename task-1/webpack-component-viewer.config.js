@@ -22,10 +22,13 @@ module.exports = {
     watch: true,
     devtool: 'eval-source-map',
     plugins: [
-        //new webpack.optimize.DedupePlugin(),  only for prod
-
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            chunks: ['vendor', 'component-viewer']
+        }),
         new webpack.HotModuleReplacementPlugin(),
-        new ExtractTextPlugin('styles.css') //css in separate files
+        new ExtractTextPlugin('styles.css', {allChunks: true}),
+        new webpack.NoErrorsPlugin()
     ],
     module: {
         loaders: [
@@ -39,7 +42,7 @@ module.exports = {
                 loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]--[hash:base64:5]')
             }, {
                 test: /\.css$/,
-                include: path.resolve(SRC_DIR, 'views'),
+                include: path.resolve(SRC_DIR, 'component-viewer'),
                 loader: 'style-loader!css-loader'
             }, {
                 test: /\.jsx?$/,

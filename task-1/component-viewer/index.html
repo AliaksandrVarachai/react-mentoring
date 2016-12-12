@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Test of Components</title>
+    <link rel="stylesheet" href="http://localhost:8082/styles.css">
 </head>
 <body>
-<form id="dashboard">
-    <label>
-        Enter the name of a component:
-        <input type="text" id="component-name" placeholder="ComponentName">
-    </label>
-    <!-- TODO: replace by submit  -->
-    <button id="show-component">Show component</button>
-</form>
-<div class="component-container"></div>
+<div id="wrapper">
+    <div id="dashboard">
+        <label>
+            Enter the name of a component:
+            <!--<input type="" id="component-name" placeholder="ComponentName">-->
+            <span id="component-list"></span>
+        </label>
+        <!-- TODO: replace by submit  -->
+        <button id="show-component">Show component</button>
+    </div>
+    <div id="component-container"></div>
+</div>
+<script src="http://localhost:8082/vendor.js"></script>
 <script src="http://localhost:8082/component-viewer.js"></script>
 </body>
 </html>

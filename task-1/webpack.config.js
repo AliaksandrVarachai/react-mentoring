@@ -8,8 +8,8 @@ var DIST_DIR = path.resolve(ASSETS_DIR, 'dist');
 
 module.exports = {
     entry: {
-        'main': path.resolve(SRC_DIR, 'views/main'),
-        'component-viewer': path.resolve(SRC_DIR, 'views/component-viewer')
+        'main': path.resolve(SRC_DIR, 'views/main')
+        //'component-viewer': path.resolve(SRC_DIR, 'views/component-viewer')
     },
     output: {
         path: DIST_DIR,

@@ -1,0 +1,10 @@
+#dashboard {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#component-container {
+    border: 1px green dotted;
+    padding: 10px;
+    min-height: 200px;
+}
+
