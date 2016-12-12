@@ -6,7 +6,9 @@
   "repository": "https://github.com/AliaksandrVarachai/react-mentoring.git",
   "scripts": {
     "start": "webpack-dev-server --port 8081 --content-base assets/dist/",
-    "dev": "webpack"
+    "dev": "webpack",
+    "component-viewer": "webpack --config webpack-component-viewer.config.js",
+    "start-component-viewer": "webpack-dev-server --port 8082 --content-base assets/dist-component-viewer/"
   },
   "keywords": [
     "JS",
