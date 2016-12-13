@@ -11,74 +11,79 @@ const components = {
     Search: Search
 };
 
-//let componentNameInput = document.getElementById('component-name');
-let componentContainer = document.getElementById('component-container');
-let componentNameList = document.getElementById('component-list');
-
 export class Wrapper extends React.Component {
-    render() {
-        return <div>
-            <div className="dashboard">
-                <label>
-                    Choose a component to view:
-                    <ComponentNameList/>
-                </label>
-            </div>
-            <ComponentReview/>
-        </div>
-
-    }
-}
-
-export class ComponentNameList extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             values: Object.keys(components),
-            value: Object.keys(components)[0]
+            value: ""//Object.keys(components)[0]
         };
-        this.handleChanhge = this.handleChange.bind(this);
+        this.changeValue = this.changeValue.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
-
+    changeValue(value) {
+        this.setState({value: value});
     }
 
     render() {
-        return <select value={this.state.value} onChange={this.handleChange}>
-            {this.state.values.map(function(val, inx) {
+        return <div>
+            <div className="dashboard">
+                <label>
+                    Choose a component to view:
+                    <ComponentNameList values={this.state.values} changeValue={this.changeValue}/>
+                </label>
+            </div>
+            <div className="component-container">
+                <ComponentReview name={this.state.value}/>
+            </div>
+        </div>
+
+    }
+}
+
+class ComponentNameList extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            selected: null
+        };
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        this.props.changeValue(event.target.value);
+        this.setState({selected: event.target.value || null})
+    }
+
+    render() {
+        return <select vale={this.state.selected || ""} onChange={this.handleChange}>
+            <option key="-1" value="">-- List of components: --</option>
+            {this.props.values.map(function(val, inx) {
                 return <option key={inx} value={val}>{val}</option>
             })}
         </select>
     }
 }
 
-export class ComponentReview extends React.Component {
+class ComponentReview extends React.Component {
 
     constructor(props) {
-        this.defaultProps = {name: ""};
+        super(props);
     }
 
-
     render() {
-        if (name) {
+        if (this.props.name) {
             let DynamicComponent = components[this.props.name];
-            return <DynamicComponent name={componentNameInput.value}/>;
+            if (DynamicComponent) {
+                return <DynamicComponent/>;
+            }
         }
-        return <div>No component is chosen</div>
-
+        return <span className="no-component">No component is chosen</span>
 
     }
 }
 
-
-
-document.getElementById('show-component').onclick = function() {
-    ReactDOM.render(<Wrapper name={componentNameInput.value}/>, componentContainer);
-};
-
-
-ReactDOM.render(<Wrapper/>, componentNameList);
+ReactDOM.render(<Wrapper/>, document.getElementById('wrapper'));
 
