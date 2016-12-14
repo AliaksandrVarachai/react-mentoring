@@ -58,7 +58,7 @@ class ComponentNameList extends React.Component {
     }
 
     render() {
-        return <select vale={this.state.selected || ""} onChange={this.handleChange}>
+        return <select value={this.state.selected || ""} onChange={this.handleChange}>
             <option key="-1" value="">-- List of components: --</option>
             {this.props.values.map(function(val, inx) {
                 return <option key={inx} value={val}>{val}</option>

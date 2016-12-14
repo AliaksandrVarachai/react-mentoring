@@ -21,6 +21,7 @@ module.exports = {
     },
     watch: true,
     devtool: 'eval-source-map',
+    debug: true,
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
