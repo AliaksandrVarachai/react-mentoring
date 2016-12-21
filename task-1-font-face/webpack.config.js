@@ -14,7 +14,9 @@ module.exports = {
         filename: '[name].js',
         publicPath: '/'
     },
-    watch: true,  //TODO: make prod version
+    watch: true,
+    devtool: 'eval-source-map',
+    debug: true,
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new ExtractTextPlugin('styles.css', {allChunks: true})
@@ -26,17 +28,20 @@ module.exports = {
                 loader: 'react-hot',
                 exclude: /node_modules/
             }, {
+                /* loading of components (exclude main css) */
                 test: /\.css$/,
                 include: SRC_DIR,
+                exclude: path.resolve(SRC_DIR, 'styles.css'),
                 loaders: [
                     'style?sourceMap',
-                    'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+                    'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
                 ]
-            /*}, {
-                test: /^styles\.css$/,
-                include: SRC_DIR,
+            }, {
+                /* loading of the main css */
+                //test: /^styles\.css$/,
+                include: path.resolve(SRC_DIR, 'styles.css'),
                 loader: 'style-loader!css-loader'
-                */
+
             }, {
                 test: /\.html$/,
                 include: __dirname,

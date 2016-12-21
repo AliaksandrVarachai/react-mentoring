@@ -1,3 +1,39 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('./fonts/icomoon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.icon {
+    font-family: 'icomoon' !important;
+}
+.icon-bin:before {
+    content: "\e9ac";
+}
+.icon-plus:before {
+    content: "\ea0a";
+}
+.icon-cross:before {
+    content: "\ea0f";
+}
+
+.container {
+    padding: 20px;
+    background: yellow;
+    text-align: center;
+}
+
+.exp {
+    color: red;
+    font-size: 16px;
+}
+
+.exp:hover {
+    cursor: pointer;
+}
+
+
+
 .search {
     box-sizing: border-box;
     padding: 10px 0;

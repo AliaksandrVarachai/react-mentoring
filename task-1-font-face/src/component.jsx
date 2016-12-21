@@ -19,7 +19,7 @@ class Search extends React.Component {
             </label>
             <div styleName='search-string-container'>
                 <input type="text" placeholder="Search" styleName='search-string'/>
-                <div styleName='erase icon icon-cross'>x</div>
+                <div styleName='erase icon icon-cross'></div>
             </div>
         </div>
     }
