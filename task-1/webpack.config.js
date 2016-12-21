@@ -30,7 +30,7 @@ module.exports = {
             }, {
                 test: /\.css$/,
                 include: path.resolve(SRC_DIR, 'components'),
-                loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]--[hash:base64:5]')
+                loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]--[hash:base64:5]$allowMultiple=true')
             }, {
                 test: /\.css$/,
                 include: path.resolve(SRC_DIR, 'views'),
