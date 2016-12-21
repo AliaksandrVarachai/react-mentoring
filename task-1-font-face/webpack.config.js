@@ -31,9 +31,15 @@ module.exports = {
                 include: SRC_DIR,
                 loader: 'style-loader!css-loader'
             }, {
+                test: /\.html$/,
+                include: __dirname,
+                exclude: /node_modules/,
+                loader: 'file-loader?name=[name].[ext]'
+            }, {
                 test: /\.woff/,
                 include: path.resolve(SRC_DIR, 'fonts'),
-                loader: 'url-loader?limit=10000'
+                //loader: 'url-loader?limit=10&name=[name].[ext]&publicPath=http://localhost:8081/&outputPath=dist/fonts/'
+                loader: 'url-loader?limit=10&name=fonts/[name].[ext]'
             }, {
                 test: /\.jsx?$/,
                 include: SRC_DIR,

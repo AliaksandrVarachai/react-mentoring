@@ -1,4 +1,5 @@
 require('./styles.css');
+require('file!../index.html');
 
 document.onload = function() {
     console.log('js is loaded');
