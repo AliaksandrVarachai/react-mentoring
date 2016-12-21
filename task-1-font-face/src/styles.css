@@ -39,3 +39,7 @@
     color: red;
     font-size: 16px;
 }
+
+.exp:hover {
+    cursor: pointer;
+}

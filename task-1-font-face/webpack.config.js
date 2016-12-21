@@ -26,10 +26,17 @@ module.exports = {
                 loader: 'react-hot',
                 exclude: /node_modules/
             }, {
-
                 test: /\.css$/,
                 include: SRC_DIR,
+                loaders: [
+                    'style?sourceMap',
+                    'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+                ]
+            /*}, {
+                test: /^styles\.css$/,
+                include: SRC_DIR,
                 loader: 'style-loader!css-loader'
+                */
             }, {
                 test: /\.html$/,
                 include: __dirname,
