@@ -20,7 +20,7 @@ class Search extends React.Component {
             </label>
             <div styleName='search-string-container'>
                 <input type="text" placeholder="Search" styleName='search-string'/>
-                <div styleName='erase'>x</div>
+                <div styleName='erase icon icon-cross'></div>
             </div>
         </div>
     }
@@ -28,4 +28,4 @@ class Search extends React.Component {
 }
 
 //export default Search;
-export default CSSModules(Search, styles);
+export default CSSModules(Search, styles, {allowMultiple: true});

@@ -14,9 +14,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Search from './component.jsx';
 import SearchStyles from './component-styles.css';
-//import CSSModules from 'react-css-modules';
-//import './index.css';
-
 
 
 export class Header extends React.Component {

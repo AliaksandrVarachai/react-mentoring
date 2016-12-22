@@ -1,15 +1,19 @@
 import './component-viewer.css';
+import 'file!../../../component-viewer/index.html';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//to test a component register it here
+/* begin component's registration */
 import ProgressBar from '../components/progress-bar/progress-bar.jsx';
+import ProgressBarStyles from '../components/progress-bar/progress-bar.css';
 import Search from '../components/search/search.jsx';
+import SearchStyles from '../components/search/search.css';
 
 const components = {
-    ProgressBar: ProgressBar,
-    Search: Search
+    ProgressBar: {component: ProgressBar, styles: ProgressBarStyles},
+    Search: {component: Search, styles: SearchStyles}
 };
+/* end component's registration */
 
 export class Wrapper extends React.Component {
 
@@ -75,9 +79,11 @@ class ComponentReview extends React.Component {
 
     render() {
         if (this.props.name) {
-            let DynamicComponent = components[this.props.name];
+            let DynamicComponent = components[this.props.name].component;
+            let DynamicComponentStyles = components[this.props.name].styles;
+            console.dir(DynamicComponentStyles);
             if (DynamicComponent) {
-                return <DynamicComponent/>;
+                return <DynamicComponent styles={DynamicComponentStyles}/>;
             }
         }
         return <span className="no-component">No component is chosen</span>

@@ -5,10 +5,10 @@
   "main": "index.js",
   "repository": "https://github.com/AliaksandrVarachai/react-mentoring.git",
   "scripts": {
-    "start": "webpack-dev-server --port 8081 --content-base assets/dist/",
-    "dev": "webpack",
+    "dev": "webpack --config webpack.dev.config.js",
+    "start": "webpack-dev-server --port 8090 --content-base assets/dist/",
     "component-viewer": "webpack --config webpack-component-viewer.config.js",
-    "start-component-viewer": "webpack-dev-server --port 8082 --content-base assets/dist-component-viewer/"
+    "start-component-viewer": "webpack-dev-server --port 8092 --content-base assets/dist-component-viewer/"
   },
   "keywords": [
     "JS",
@@ -28,10 +28,13 @@
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.26.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
     "react-css-modules": "^4.1.0",
     "react-hot-loader": "^1.3.1",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   }
+
 }
