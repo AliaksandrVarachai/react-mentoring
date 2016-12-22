@@ -16,7 +16,7 @@ module.exports = {
         filename: '[name].js',
         publicPath: '/'
     },
-    watch: true,  //TODO: make prod version
+    watch: true,
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new ExtractTextPlugin('styles.css', {allChunks: true})
@@ -30,11 +30,19 @@ module.exports = {
             }, {
                 test: /\.css$/,
                 include: path.resolve(SRC_DIR, 'components'),
-                loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]--[hash:base64:5]$allowMultiple=true')
+                loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]')
             }, {
                 test: /\.css$/,
                 include: path.resolve(SRC_DIR, 'views'),
                 loader: 'style-loader!css-loader'
+            }, {
+                test: /\.html$/,
+                include: path.resolve(__dirname, 'views'),
+                loader: 'file-loader?name=[name].[ext]'
+            }, {
+                test: /\.woff/,
+                include: path.resolve(ASSETS_DIR, 'fonts'),
+                loader: 'url-loader?limit=10&name=fonts/[name].[ext]'
             }, {
                 test: /\.jsx?$/,
                 include: SRC_DIR,
