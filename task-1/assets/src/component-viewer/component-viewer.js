@@ -8,10 +8,13 @@ import ProgressBar from '../components/progress-bar/progress-bar.jsx';
 import ProgressBarStyles from '../components/progress-bar/progress-bar.css';
 import Search from '../components/search/search.jsx';
 import SearchStyles from '../components/search/search.css';
+import CategoryTree from '../components/category-tree/category-tree.jsx';
+import CategoryTreeStyles from '../components/category-tree/category-tree.css';
 
 const components = {
     ProgressBar: {component: ProgressBar, styles: ProgressBarStyles},
-    Search: {component: Search, styles: SearchStyles}
+    Search: {component: Search, styles: SearchStyles},
+    CategoryTree: {component: CategoryTree, styles: CategoryTreeStyles}
 };
 /* end component's registration */
 

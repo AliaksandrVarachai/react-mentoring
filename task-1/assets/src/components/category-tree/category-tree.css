@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../../../fonts/icomoon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icomoon {
+    font-family: 'icomoon' !important;
+}
+
+.icon-pen:before {
+    content: "\e905";
+}
+
+.icon-bin:before {
+    content: "\e9ac";
+}
+
+.icon-plus:before {
+    content: "\ea0a";
+}
+
+.category {
+    /* The main container */
+    border: solid slategray 1px;
+}
+
+.category-left {
+}
+
+.category-right {
+    float: right;
+}
+
+.header {
+}
+
+.icon-action {
+    padding: 5px;
+    font-size: 0.8em;
+    vertical-align: middle;
+}
