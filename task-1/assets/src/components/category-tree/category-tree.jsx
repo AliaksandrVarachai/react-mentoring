@@ -9,14 +9,14 @@ class Category extends React.Component {
 
     render() {
         return (
-            <div>
+            <div styleName="category-tree">
                 {this.props.categories.map((category, key) => (
                     <div styleName="category" key={key}>
                         <div styleName="category-right">
                             <span styleName="icomoon icon-bin icon-action"></span>
                             <span styleName="icomoon icon-plus icon-action"></span>
                         </div>
-                        <div styleName="category-left icon-action">
+                        <div styleName="category-left">
                             <span styleName="header">{category.name}</span>
                             <span styleName="icomoon icon-pen icon-action"></span>
                         </div>
