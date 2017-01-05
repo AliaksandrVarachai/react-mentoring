@@ -8,6 +8,11 @@
 .category-tree {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.category-subtree {
+    margin-left: 1em;
+}
+
 .icomoon {
     font-family: 'icomoon' !important;
 }
@@ -24,30 +29,60 @@
     content: "\ea0a";
 }
 
+.show-subcategories {
+    margin: 0 0.4em;
+    vertical-align: 0.2em;
+}
+
 .category {
     border-top: none;
-    border-bottom: solid slategray 1px;
-    border-right: solid slategray 1px;
-    border-left: solid slategray 1px;
+    border-bottom: solid silver 1px;
+    border-right: solid silver 1px;
+    border-left: solid silver 1px;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+    padding: 0.2em 8em 0.2em 0.2em;
+    box-sizing: border-box;
 }
 
 .category:first-child {
-    border-top: solid slategray 1px;
+    border-top: solid silver 1px;
 }
 
-.category-left {
+.aligned-right {
+    position: absolute;
+    display: inline-block; /* in one line */
+    right: 0;
 }
 
-.category-right {
-    float: right;
+.inline-icon {
+    position: relative;
+    right: 2.5em; /* reserved for .aligned-right */
+    vertical-align: bottom;  /* overflow set baseline */
+    margin-left: 0.5em;
 }
 
 .header {
+    display: inline-block;
+    max-width: 100%;
+    margin-right: 2em;
+    margin-left: 0.2em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .icon-action {
-    padding: 5px;
+    padding: 0.4em 0.4em;
+    width: 1em;
+    text-align: center;
     font-size: 0.8em;
-    vertical-align: middle;
     cursor: pointer;
+    display: inline-block;
+    border: solid lightgrey 1px;
+    border-radius: 4px;
+    margin: 0 0.4em;
+
+
 }
