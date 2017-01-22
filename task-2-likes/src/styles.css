@@ -1,0 +1,43 @@
+.item {
+    box-sizing: border-box;
+    float: left;
+    width: 160px;
+    height: 260px;
+    margin: 20px;
+    padding: 10px 5px;
+    box-shadow: 0 0 10px 5px #888888;
+    background: ivory;
+    text-align: center;
+    position: relative;
+}
+
+.item .name {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.item .avatar {
+    width: 110px;
+    height: 110px;
+}
+
+.item .avatar.pleased {
+    box-shadow: 0 0 5px 5px gold;
+}
+
+.item .greeting {
+    margin: 10px 5px;
+    max-height: 3.5em;
+    overflow: hidden;
+    text-align: left;
+}
+
+.item .user-actions {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 0;
+    padding: 0 5px;
+}
