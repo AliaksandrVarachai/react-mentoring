@@ -1,16 +1,31 @@
 import React from 'react';
 
 export default class Item extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            sayHello: this.props.sayHello
+        };
+        this.handleSayHello = this.handleSayHello.bind(this);
+    }
+
+    handleSayHello(e) {
+        this.setState({
+            sayHello: e.target.checked
+        })
+    };
 
     render() {
-        //some calculations
         return (
             <div className="item">
-                <div className="name">Nickname</div>
-                <img className="avatar pleased" src="http://www.southparkfan.ru/wall/images_large/avatars/001980.jpg" alt=""/>
-                <div className="greeting">Glad to see you Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur iure praesentium voluptas. Aperiam commodi cum debitis delectus illo illum inventore minus, nam numquam odio porro possimus provident, quisquam vitae!</div>
+                <div className="name">{this.props.name}</div>
+                <img className={"avatar" + (this.state.sayHello ? ' pleased' : '')} src={this.props.avatarSrc} alt=""/>
+                <div className="greeting">{this.props.greeting}</div>
                 <div className="user-actions">
-                    <label><input type="checkbox" name="say-hello"/> Say hello</label>
+                    <label>
+                        <input type="checkbox" name="say-hello" checked={this.state.sayHello} onChange={this.handleSayHello}/>
+                        Say hello
+                    </label>
                 </div>
             </div>
         );

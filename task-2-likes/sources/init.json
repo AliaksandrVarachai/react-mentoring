@@ -1,0 +1,39 @@
+{
+  "author": "Alex",
+  "items":
+    [
+      {
+        "name": "Stan Marsh",
+        "avatarSrc": "http://www.southparkfan.ru/wall/images_large/avatars/001988.jpg",
+        "greeting": "Oh my God, they killed Kenny!",
+        "sayHello": false
+      }, {
+      "name": "Kyle Broflovski",
+      "avatarSrc": "http://www.southparkfan.ru/wall/images_large/avatars/002004.jpg",
+      "greeting": "You bastards!",
+      "sayHello": false
+    }, {
+      "name": "Eric Cartman",
+      "avatarSrc": "http://www.southparkfan.ru/wall/images_large/avatars/001980.jpg",
+      "greeting": "Screw you guys, I'm going home.",
+      "sayHello": false
+    }, {
+      "name": "Kenny McCormick",
+      "avatarSrc": "http://www.southparkfan.ru/wall/images_large/avatars/001991.jpg",
+      "greeting": "Bo boo bo boo bo booboo bob boo:)",
+      "sayHello": false
+    }, {
+      "name": "Leopold Stotch",
+      "avatarSrc": "http://www.southparkfan.ru/wall/images_large/avatars/002015.jpg",
+      "greeting": "Hi! My name is Butters!",
+      "sayHello": false
+    }, {
+      "name": "Wendy Testaburger",
+      "avatarSrc": "http://www.southparkfan.ru/wall/images_large/avatars/001999.jpg",
+      "greeting": "Glad to see you!",
+      "sayHello": false
+    }
+    ]
+}
+
+
