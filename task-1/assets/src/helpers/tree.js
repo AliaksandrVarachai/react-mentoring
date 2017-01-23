@@ -12,10 +12,11 @@ function treeTraverse(tree, nodeName, cb, options) {
     if (!tree[node]) {
         throw Error(`There is no node with name "${nodeName}"`);
     }
+
     _treeTraverse(tree, nodeName, 0, cb);
 }
 
-function _treeTraverse(tree, nodeName, depth, cb) {
+function _treeTraverse(tree, nodeName, newTree, cb) {
     let node = tree[nodeName];
     let dom;
     if (node instanceof Array) {
@@ -39,3 +40,43 @@ function _treeTraverse(tree, nodeName, depth, cb) {
 export default {
     treeTraverse
 };
+
+/* добавление элемента на JS */
+var div_0 = document.createElement('div');
+div_0.classList.add('depth-0');
+div_0.innerHTML = 'Text level-0';
+var div_1 = document.createElement('div');
+div_1.classList.add('depth-1');
+div_1.innerHTML = 'Text level-1';
+div_0.appendChild(div_1);
+document.body.appendChild(div_0);
+
+/* то же на JSX */
+document.body.appendChild(
+    <div class="depth-0">
+        Text level-0
+        <div class="depth-1">
+            Text level-1
+            <ul>
+                //option 1
+                {['item-1', 'item-2', 'item-3'].map(function(item) {
+                    return <li>{item}</li>
+                })}
+                //option 2
+                <li>item-1</li>
+                <li>item-2</li>
+                <li>item-3</li>
+                //option 3
+                [
+                    <li>item-1</li>,
+                    <li>item-2</li>,
+                    <li>item-3</li>
+                ]
+                //The next does not work, because fuction shout return something
+                {['item-1', 'item-2', 'item-3'].forEach(function(item) {
+                    return <li>{item}</li>
+                })}
+            </ul>
+        </div>
+    </div>
+);
