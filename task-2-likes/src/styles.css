@@ -41,3 +41,22 @@
     left: 0;
     padding: 0 5px;
 }
+
+/* arithmetic on the top of page */
+.menu {
+    background: azure;
+}
+
+.menu .sign {
+    display: inline-block;
+    font-size: 2em;
+    text-align: center;
+    vertical-align: top;
+    margin: 0 5px;
+}
+
+.menu .sign button {
+    width: 2em;
+    outline: none;
+    margin: 0 2px;
+}

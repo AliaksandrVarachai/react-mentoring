@@ -2,6 +2,8 @@ import './styles.css';
 import 'file!../index.html';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {createStore, combineReducers} from 'redux';
+import {connect} from 'react-redux';
 
 import Item from './components/item';
 
@@ -26,8 +28,6 @@ class App extends React.Component {
     }
 
     render() {
-        console.dir(this.state)
-        console.dir('render')
         return (
             <div>
                 {this.state.items ? this.state.items.map(item => (

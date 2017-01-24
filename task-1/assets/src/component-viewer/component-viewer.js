@@ -90,7 +90,6 @@ class ComponentReview extends React.Component {
             }
         }
         return <span className="no-component">No component is chosen</span>
-
     }
 }
 
